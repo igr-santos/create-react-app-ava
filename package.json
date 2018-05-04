@@ -58,7 +58,9 @@
       "!dist/**/*"
     ],
     "require": [
-      "babel-register"
+      "babel-register",
+      "./config/polyfills.js",
+      "./config/setupTest.js"
     ],
     "babel": "inherit"
   },
@@ -71,6 +73,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "ava": "0.25.0"
+    "ava": "0.25.0",
+    "jsdom": "^11.10.0"
   }
 }
