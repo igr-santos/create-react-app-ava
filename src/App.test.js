@@ -1,12 +1,9 @@
 import test from 'ava';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
 
 test('renders without crashing', t => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-
-  t.pass();
+  const node = shallow(<App />);
+  t.is(node.find('.App').length, 1);
 });
